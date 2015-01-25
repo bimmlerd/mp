@@ -1,0 +1,13 @@
+<template name="layout">
+  <body>
+    <div class="container">
+      <header>
+      <!-- NAVIGATION? ALSO LOGIN BUTTONS -->
+        <!-- <a href="{{pathFor 'userEdit'}}">userEdit</a> -->
+        <a class="brand" href="{{pathFor 'participantsList'}}">Muscle UP</a>
+        {{> loginButtons}}
+      </header>
+      {{> yield}}
+    </div>
+  </body>
+</template>
