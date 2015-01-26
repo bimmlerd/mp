@@ -1,11 +1,13 @@
 <template name="layout">
   <body>
+    <div class="navbar">
+      <ul>
+        <li>{{> loginButtons align="right"}}</li>
+      </ul>
+    </div>
     <div class="container">
       <header>
-      <!-- NAVIGATION? ALSO LOGIN BUTTONS -->
-        <!-- <a href="{{pathFor 'userEdit'}}">userEdit</a> -->
-        <a class="brand" href="{{pathFor 'participantsList'}}">Muscle UP</a>
-        {{> loginButtons}}
+        <a class="brand" href="{{pathFor 'spevsList'}}">Muscle UP</a>
       </header>
       {{> yield}}
     </div>

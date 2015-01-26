@@ -1,21 +1,27 @@
-Participants = new Mongo.Collection("participants");
-Events = new Mongo.Collection("events");
+// XXX FIXME do these belong in server.js?
 
 Meteor.methods({
-  "join-event": function () {
-  	// XXX FIXME EVENTREFACTOR add to event.participants, not just participants
+  "join-spev": function (spev_id) {
     // Make sure the user is logged in before inserting a participant
-    if (Participants.findOne(Meteor.userId())) {
+    if (Participants.findOne({userId: Meteor.userId(), spevId: spev_id})) {
         // already added.
         console.log("You already joined this event.")
         return;
     }
-    Participants.insert(Meteor.user());
+    Participants.insert({userId: Meteor.userId(), spevId: spev_id});
   },
-  "leave-event": function (participantId) {
-  	// XXX FIXME EVENTFACTOR remove from event.participants, not just from participants
-    if (Meteor.userId() === participantId) {
-        Participants.remove(participantId);
-    };
+  "leave-spev": function (spev_id) {
+    Participants.remove({userId: Meteor.userId(), spevId: spev_id});
+  },
+  // XXX FIXME hardcoded everything xD
+  // format date
+  // type (eg are weights applicable?)
+  "create-spev": function() {
+    spev_id = new Meteor.Collection.ObjectID()._str;
+    Spevs.insert({
+		  "name" : "MUSCLE PUMP",
+		  "date" : "Jan 26 - 8:00",
+		  "spevId": spev_id
+	});
   }
 });

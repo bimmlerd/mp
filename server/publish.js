@@ -2,18 +2,13 @@ Meteor.publish('participants', function() {
 	return Participants.find();
 });
 
-Meteor.publish('events'), function() {
-	// XXX FIXME EVENTREFACTOR sort; next event at the top
-	return Events.find();
-}
+Meteor.publish('spevs', function() {
+	// XXX FIXME SPEVREFACTOR sort; next event at the top
+	return Spevs.find();
+});
 
 // Meteor.users
 Meteor.publish(null, function () {
-  if (this.userId) {
-    return Meteor.users.find({_id: this.userId},
+    return Meteor.users.find({},
                              {fields: {'weights': 1, 'displayName': 1}});
-  } else {
-    this.ready();
-  }
 });
-

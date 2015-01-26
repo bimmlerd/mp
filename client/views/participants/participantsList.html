@@ -1,11 +1,5 @@
 <template name="participantsList">
-	{{#if currentUser}}
-		<!-- XXX FIXME EVENTREFACTOR participating needs fixing -->
-    	<div class="ruler"><a id="join-leave-btn" class="participate {{#if participating}} leave-event {{else}} join-event {{/if}}" role="button">+</a></div>
-	{{/if}}
-
 	<ul>
-	<!-- XXX FIXME EVENTREFACTOR participants of this specific event, not general -->
 	  {{#each participants}}
 	  {{> participant}}
 	  {{/each}}

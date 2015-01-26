@@ -28,6 +28,46 @@ header {
   border-bottom: #eee solid 1px;
 }
 
+.navbar {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 35px;
+  /*margin-bottom: 20px;*/
+  border: 1px solid transparent;
+  background-color: #eee;
+  z-index: 1000;
+  border-width: 0 0 1px;
+}
+
+.navbar li {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  border: none;
+}
+
+.editUser {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background: none;
+  font-size: 1.5em;
+  border: none;
+  position: relative;
+  outline: 0;
+  cursor: pointer;
+  border-bottom: #eee solid 1px;
+}
+
+.editUser a {
+  display: inline-block;
+  width: 200px;
+  text-decoration: none;
+  color: black;
+}
+
 #login-buttons {
   display: block;
 }
@@ -35,7 +75,7 @@ header {
 a.brand {
   display: block;
   text-decoration: none;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
   letter-spacing: .2em;
   text-align: center;
@@ -73,13 +113,14 @@ ul {
 .participate {
   transition: all 100ms ease;
   display: inline-block;
+  float: right;
   width:50px;
   height:50px;
   line-height: 40px;
   vertical-align: baseline;
   text-align: center;
   font-weight: bold;
-    background: none;
+  background: none;
   font-size: 3em;
   border: none;
   position: relative;
@@ -93,16 +134,31 @@ ul {
   user-select: none;
 }
 
-
-.leave-event {
+.leave-spev {
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.leave-event:hover {
+.leave-spev:hover {
   color: #ff4530;
 }
 
+.spev {
+  border-bottom: none;
+}
+
+.spev-name {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.spev-date {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
 .ruler {
+  border-top: #eee solid 1px;
   border-bottom: #eee solid 1px;
   text-align: center;
 }
@@ -116,7 +172,7 @@ li {
 
 .participant-name {
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .participant-weight {

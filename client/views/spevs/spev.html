@@ -1,0 +1,10 @@
+<template name="spev">
+	<li class="spev">
+		{{#if currentUser}}
+    	<a id="join-leave-btn-{{spevId}}" class="participate {{#if participating}} leave-spev {{else}} join-spev {{/if}}" role="button">+</a>
+		{{/if}}
+		<div class="spev-name">{{name}}</div>
+		<div class="spev-date">{{date}}</div>
+		<div class="spev-participants">{{> participantsList}}</div>
+	</li>
+</template>

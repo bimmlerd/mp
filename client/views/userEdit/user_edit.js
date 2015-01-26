@@ -13,21 +13,20 @@ Template.userEdit.events({
 
 		Meteor.users.update({"_id": Meteor.userId()}, {$set: {weights: form.weights, displayName: form.dpName}}, function(error) {
 			if (error) {
-				// display the error to the user
 				throw new Meteor.Error("Error in updating User", error.reason);
 			} else {
 				if (Participants.findOne(Meteor.userId())) {
-					Meteor.call("leave-event", Meteor.userId());
-					Meteor.call("join-event");	
+					Meteor.call("leave-spev", Meteor.userId());
+					Meteor.call("join-spev");	
 				}
-				Router.go('participantsList');
+				Router.go('spevsList');
 			}
 		});
 	},
 	'click .delete': function(e) {
 		e.preventDefault();
 		if (confirm("Delete yourself?")) {
-			Meteor.call("leave-event");
+			Meteor.call("leave-spev");
 			Meteor.users.remove(Meteor.userId()); 
 			Router.go('participantsList');
 	}

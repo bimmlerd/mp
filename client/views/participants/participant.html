@@ -1,9 +1,9 @@
 <template name="participant">
   <li class="participant">
-    <div class="participant-name">{{displayName}}</div>
+    <div class="participant-name">{{user.displayName}}</div>
     <div class="participant-weight">
-    <div class="participant-weight-nr">{{weights.five}}</div> 5er, 
-    <div class="participant-weight-nr">{{weights.two}}</div> 2er und 
-    <div class="participant-weight-nr">{{weights.one}}</div> 1er</div> 
+    <div class="participant-weight-nr">{{user.weights.five}}</div> 5er,
+    <div class="participant-weight-nr">{{user.weights.two}}</div> 2er und
+    <div class="participant-weight-nr">{{user.weights.one}}</div> 1er</div>
    </li>
 </template>
