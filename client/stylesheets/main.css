@@ -48,7 +48,7 @@ header {
   border: none;
 }
 
-.editUser {
+.buttons {
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
@@ -61,7 +61,7 @@ header {
   border-bottom: #eee solid 1px;
 }
 
-.editUser a {
+.buttons a {
   display: inline-block;
   width: 200px;
   text-decoration: none;
@@ -148,6 +148,7 @@ ul {
 }
 
 .spev-name {
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
 }

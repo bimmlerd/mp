@@ -1,51 +1,21 @@
 <template name="userEdit">
-	<form class="main">
-		<div class="form-group">
-			<label for="displayName">Name</label>
-			<div class="controls">
-				<input name="displayName" type="text" value="{{currentUser.displayName}}" placeholder="Name"/>
-			</div>
+	<form class="userEdit-form">
+		<label for="displayName">My name is </label>
+		<input name="displayName" maxlength="30" type="text" value="{{currentUser.displayName}}" placeholder="Name"/>
+
+		<div class="weights-form">
+		<label>I need </label>
+		<input type="number" min="0" max="4" required name="five" value="{{currentUser.weights.five}}">
+		<label for="five">5er</label>
+		<input type="number" min="0" max="4" required name="two" value="{{currentUser.weights.two}}">
+		<label for="two">2er and</label>
+		<input type="number" min="0" max="4" required name="one" value="{{currentUser.weights.one}}">
+		<label for="one">1er</label>
 		</div>
-		<div class="form-group">
-			<p class="form-control-static">Gewichte</p>
-			<div class="controls">
-				<select name="five"> 
-				  <option value="{{currentUser.weights.five}}" selected="selected">{{currentUser.weights.five}}</option>
-				  <option value="0" >0</option>
-				  <option value="1" >1</option>
-				  <option value="2" >2</option>
-				  <option value="3" >3</option>
-				  <option value="4" >4</option>
-				</select>
-
-				<label for="five">5er</label>
-
-				<select name="two"> 
-				  <option value="{{currentUser.weights.two}}" selected="selected">{{currentUser.weights.two}}</option>
-				  <option value="0" >0</option>
-				  <option value="1" >1</option>
-				  <option value="2" >2</option>
-				  <option value="3" >3</option>
-				  <option value="4" >4</option>
-				</select>
-
-				<label for="two">2er</label>
-
-				<select name="one"> 
-				  <option value="{{currentUser.weights.one}}" selected="selected">{{currentUser.weights.one}}</option>
-				  <option value="0" >0</option>
-				  <option value="1" >1</option>
-				  <option value="2" >2</option>
-				  <option value="3" >3</option>
-				  <option value="4" >4</option>
-				</select>
-				<label for="one">1er</label>
-			</div>
+		<div class="submit-btn">
+		<input type="submit" value="Submit"/>
 		</div>
-			<div class="form-group"> <div class="controls">
-				<input type="submit" value="Submit" class="btn btn-primary submit"/>
-			</div>
-		</div>
+
 		<!-- <hr/>
 		<div class="form-group">
 			<div class="controls">

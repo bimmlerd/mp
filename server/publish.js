@@ -10,5 +10,7 @@ Meteor.publish('spevs', function() {
 // Meteor.users
 Meteor.publish(null, function () {
     return Meteor.users.find({},
-                             {fields: {'weights': 1, 'displayName': 1}});
+							{fields: {'weights': 1,
+										'displayName': 1,
+										'creator': 1}});
 });

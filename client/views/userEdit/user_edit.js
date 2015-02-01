@@ -3,6 +3,9 @@ Template.userEdit.events({
 		e.preventDefault();
 
 		var form = {
+			// XXX FIXME this is easy to break,
+			// create an array of valid selections here
+			// and then just get an id or something...
 			dpName: $(e.target).find('[name=displayName]').val(),
 			weights: {
 				five: $(e.target).find('[name=five]').val(),
@@ -11,14 +14,24 @@ Template.userEdit.events({
 			}
 		}
 
-		Meteor.users.update({"_id": Meteor.userId()}, {$set: {weights: form.weights, displayName: form.dpName}}, function(error) {
+		if (form.weights.five == "") {
+			form.weights.five = 0;
+		}
+
+		if (form.weights.two == "") {
+			form.weights.two = 0;
+		}
+
+		if (form.weights.one == "") {
+			form.weights.one = 0;
+		}
+
+		Meteor.users.update({"_id": Meteor.userId()},
+			{$set: {weights: form.weights, displayName: form.dpName}},
+			function(error) {
 			if (error) {
 				throw new Meteor.Error("Error in updating User", error.reason);
 			} else {
-				if (Participants.findOne(Meteor.userId())) {
-					Meteor.call("leave-spev", Meteor.userId());
-					Meteor.call("join-spev");	
-				}
 				Router.go('spevsList');
 			}
 		});

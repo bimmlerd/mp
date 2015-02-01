@@ -1,0 +1,35 @@
+.createSpev-form input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  padding-right: 80px;
+}
+
+.createSpev-form input:focus{
+  outline: 0;
+}
+
+.createSpev-form {
+	padding: 0 15px;
+	font-size: 1.5em;
+	color: #999;
+}
+
+.createSpev-form input {
+	font-size: 1.5em;
+}
+
+
+.createSpev-form input {
+	background: transparent;
+	border: none;
+}
+
+.createSpev-form input:focus {
+	outline: 0;
+}
+
+.submit-btn {
+	text-align: right;
+}

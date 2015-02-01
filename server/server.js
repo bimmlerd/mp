@@ -3,7 +3,7 @@ Accounts.onCreateUser(function(options, user) {
     // We still want the default hook's 'profile' behavior.
     if (options.profile)
     	user.profile = options.profile;
-
+    user.creator = false;
     user.displayName = options.username;
     user.weights = {
     	// some default values..
@@ -19,7 +19,7 @@ Meteor.users.allow({
 	update: function (userId, doc, fields, modifier) {
     	// can only change your own documents
         // TODO apparently doc only contains _id if it was changed, so
-        // that should also be blocked.
+        // that should also be blocked. unsure about this.
     	return doc._id === userId;
 	},
 	remove: function (userId, doc) {
@@ -32,7 +32,8 @@ Meteor.users.deny({
         // TODO apparently doc only contains _id if it was changed, so
         // that should also be blocked.
 		var no = _.contains(fields, 'username') ||
-				_.contains(fields, 'emails');
+				_.contains(fields, 'emails') ||
+                _.contains(fields, 'creator');
 		return no;
 	}
 })
