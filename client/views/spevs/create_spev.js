@@ -16,7 +16,8 @@ Template.createSpev.events({
 		var spev_id = new Meteor.Collection.ObjectID()._str;
 		Spevs.insert({
 			"name": form.spevName,
-			"date": d.toDateString(),
+			"date": d.valueOf(),
+			"datestring": d.toDateString(),
 			"time": form.spevTime ,
 			"spevId": spev_id
 			});
