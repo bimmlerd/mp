@@ -14,16 +14,15 @@ Template.userEdit.events({
 			}
 		}
 
-		if (form.weights.five == "") {
-			form.weights.five = 0;
-		}
-
-		if (form.weights.two == "") {
-			form.weights.two = 0;
-		}
-
-		if (form.weights.one == "") {
-			form.weights.one = 0;
+		for (var key in form.weights) {
+			if (form.weights.hasOwnProperty(key)) {
+				console.log(key + " -> " + form.weights[key]);
+				if (isNaN(parseInt(form.weights[key])) ||
+					form.weights[key] === "") {
+					form.weights[key] = 0;
+					Router.go('spevsList');
+				}
+			}
 		}
 
 		Meteor.users.update({"_id": Meteor.userId()},
