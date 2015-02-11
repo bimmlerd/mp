@@ -3,9 +3,6 @@ Template.userEdit.events({
 		e.preventDefault();
 
 		var form = {
-			// XXX FIXME this is easy to break,
-			// create an array of valid selections here
-			// and then just get an id or something...
 			dpName: $(e.target).find('[name=displayName]').val(),
 			weights: {
 				five: $(e.target).find('[name=five]').val(),

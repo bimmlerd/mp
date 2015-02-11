@@ -13,15 +13,4 @@ Meteor.methods({
   "leave-spev": function (spev_id) {
     Participants.remove({userId: Meteor.userId(), spevId: spev_id});
   },
-  // XXX FIXME hardcoded everything xD
-  // format date
-  // type (eg are weights applicable?)
-  "create-spev": function() {
-    spev_id = new Meteor.Collection.ObjectID()._str;
-    Spevs.insert({
-		  "name" : "MUSCLE PUMP",
-		  "date" : "Jan 26 - 8:00",
-		  "spevId": spev_id
-	});
-  }
 });
