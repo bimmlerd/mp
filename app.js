@@ -16,12 +16,16 @@ Meteor.methods({
   // XXX FIXME hardcoded everything xD
   // format date
   // type (eg are weights applicable?)
-  "create-spev": function() {
-    spev_id = new Meteor.Collection.ObjectID()._str;
+  "create-spev": function(name) {
+    var d = new Date();
+    var spev_id = new Meteor.Collection.ObjectID()._str;
+    var spev_name = name || "Test Event"
     Spevs.insert({
-		  "name" : "MUSCLE PUMP",
-		  "date" : "Jan 26 - 8:00",
-		  "spevId": spev_id
-	});
+      "name": spev_name,
+      "date": d.valueOf(),
+      "datestring": d.toDateString(),
+      "time": "8.00" ,
+      "spevId": spev_id
+      });
   }
 });

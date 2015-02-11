@@ -3,9 +3,6 @@ Template.userEdit.events({
 		e.preventDefault();
 
 		var form = {
-			// XXX FIXME this is easy to break,
-			// create an array of valid selections here
-			// and then just get an id or something...
 			dpName: $(e.target).find('[name=displayName]').val(),
 			weights: {
 				five: $(e.target).find('[name=five]').val(),
@@ -13,7 +10,7 @@ Template.userEdit.events({
 				one: $(e.target).find('[name=one]').val()
 			}
 		}
-
+		// FIXME reimplement with check(weight, Number)
 		for (var key in form.weights) {
 			if (form.weights.hasOwnProperty(key)) {
 				console.log(key + " -> " + form.weights[key]);
