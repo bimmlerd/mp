@@ -10,7 +10,7 @@ Template.userEdit.events({
 				one: $(e.target).find('[name=one]').val()
 			}
 		}
-
+		// FIXME reimplement with check(weight, Number)
 		for (var key in form.weights) {
 			if (form.weights.hasOwnProperty(key)) {
 				console.log(key + " -> " + form.weights[key]);

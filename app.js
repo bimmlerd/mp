@@ -13,4 +13,16 @@ Meteor.methods({
   "leave-spev": function (spev_id) {
     Participants.remove({userId: Meteor.userId(), spevId: spev_id});
   },
+  "create-spev": function(name) {
+    var d = new Date();
+    var spev_id = new Meteor.Collection.ObjectID()._str;
+    var spev_name = name || "Test Event"
+    Spevs.insert({
+      "name": spev_name,
+      "date": d.valueOf(),
+      "datestring": d.toDateString(),
+      "time": "8.00" ,
+      "spevId": spev_id
+      });
+  }
 });

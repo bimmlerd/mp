@@ -2,9 +2,9 @@ Meteor.publish('participants', function() {
 	return Participants.find();
 });
 
-Meteor.publish('spevs', function() {
-	// XXX FIXME SPEVREFACTOR sort; next event at the top
-	return Spevs.find();
+Meteor.publish('spevs', function(sort, limit) {
+	// options used for pagination
+	return Spevs.find({}, {sort: sort, limit: limit});
 });
 
 // Meteor.users
