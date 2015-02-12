@@ -1,5 +1,5 @@
 Template.participant.helpers({
-        user: function () {
+        user: function() {
         	return Meteor.users.findOne({_id: this.userId});
     	}
 });

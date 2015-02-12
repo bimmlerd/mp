@@ -17,7 +17,6 @@ Template.createSpev.events({
 		Spevs.insert({
 			"name": form.spevName,
 			"date": d.valueOf(),
-			"datestring": d.toDateString(),
 			"time": form.spevTime ,
 			"spevId": spev_id
 			});

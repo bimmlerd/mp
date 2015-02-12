@@ -1,5 +1,5 @@
 Template.participantsList.helpers({
-        participants: function () {
+        participants: function() {
 			return Participants.find({spevId: this.spevId});
     	}
 });

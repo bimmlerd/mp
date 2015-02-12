@@ -9,7 +9,7 @@ Template.spev.events({
         document.getElementById("join-leave-btn-" + spev_id).className.replace
         ( /(?:^|\s)join-spev(?!\S)/g , ' leave-spev' );
     },
-    "click .leave-spev": function (e, t) {
+    "click .leave-spev": function(e, t) {
     e.preventDefault();
     var spev_id = t.data.spevId;
     Meteor.call("leave-spev", spev_id);
@@ -22,7 +22,11 @@ Template.spev.events({
 });
 
 Template.spev.helpers({
-    participating: function () {
+    participating: function() {
     	return !!Participants.find({spevId: this.spevId, userId: Meteor.userId()}).count();
-	}
+	},
+    datestring: function() {
+        var d = new Date(this.date);
+        return d.toDateString();
+    }
 });

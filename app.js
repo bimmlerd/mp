@@ -1,7 +1,7 @@
 // XXX FIXME do these belong in server.js?
 
 Meteor.methods({
-  "join-spev": function (spev_id) {
+  "join-spev": function(spev_id) {
     // Make sure the user is logged in before inserting a participant
     if (Participants.findOne({userId: Meteor.userId(), spevId: spev_id})) {
         // already added.
@@ -10,7 +10,7 @@ Meteor.methods({
     }
     Participants.insert({userId: Meteor.userId(), spevId: spev_id});
   },
-  "leave-spev": function (spev_id) {
+  "leave-spev": function(spev_id) {
     Participants.remove({userId: Meteor.userId(), spevId: spev_id});
   },
   "create-spev": function(name) {
@@ -20,7 +20,6 @@ Meteor.methods({
     Spevs.insert({
       "name": spev_name,
       "date": d.valueOf(),
-      "datestring": d.toDateString(),
       "time": "8.00" ,
       "spevId": spev_id
       });

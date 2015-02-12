@@ -1,5 +1,5 @@
 // Template.spevsList.helpers({
-//         spevs: function () {
+//         spevs: function() {
 // 			// show most in the future spev first
 // 			return Spevs.find({}, {sort: {date: -1}});
 //     	},
