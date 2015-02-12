@@ -8,4 +8,4 @@
 - Automatic event creation via some asvz api or some rule
 - Notifications (and subsequently subscribtions?)
 - Private/Public events, groups
-- fix spev database, so that datestring is not a field anymore (with a template helper and the actual date field)
+- FIX event creation, so that it's not only hidden from view, but not possible as a not-creator

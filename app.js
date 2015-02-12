@@ -14,6 +14,11 @@ Meteor.methods({
     Participants.remove({userId: Meteor.userId(), spevId: spev_id});
   },
   "create-spev": function(name) {
+    // not everybody should be able to create events
+    // pretty sure this is broken though
+    // XXX FIXME
+    if (!Meteor.user().creator) { return };
+
     var d = new Date();
     var spev_id = new Meteor.Collection.ObjectID()._str;
     var spev_name = name || "Test Event"
