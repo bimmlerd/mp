@@ -13,7 +13,6 @@ Template.userEdit.events({
 		// FIXME reimplement with check(weight, Number)
 		for (var key in form.weights) {
 			if (form.weights.hasOwnProperty(key)) {
-				console.log(key + " -> " + form.weights[key]);
 				if (isNaN(parseInt(form.weights[key])) ||
 					form.weights[key] === "") {
 					form.weights[key] = 0;
