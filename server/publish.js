@@ -8,7 +8,7 @@ Meteor.publish('spevs', function(sort, limit) {
 });
 
 // Meteor.users
-Meteor.publish(null, function () {
+Meteor.publish(null, function() {
     return Meteor.users.find({},
 							{fields: {'weights': 1,
 										'displayName': 1,

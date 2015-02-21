@@ -1,4 +1,4 @@
-Template.spev.events({
+Template.spevsListEntry.events({
     "click .join-spev": function(e,t) {
     e.preventDefault();
     var spev_id = t.data.spevId;
@@ -21,7 +21,7 @@ Template.spev.events({
     }
 });
 
-Template.spev.helpers({
+Template.spevsListEntry.helpers({
     participating: function() {
     	return !!Participants.find({spevId: this.spevId, userId: Meteor.userId()}).count();
 	},

@@ -161,6 +161,7 @@ ul {
 }
 
 .spev-name {
+  display: block;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;

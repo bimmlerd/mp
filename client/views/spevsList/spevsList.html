@@ -8,8 +8,8 @@
 		</div>
 	{{/if}}
 	<ul>
-		{{#each spevs}}
-	  		{{> spev}}
+		{{#each spevsListEntries}}
+	  		{{> spevsListEntry}}
 	  	{{/each}}
 		{{#if nextPath}}
 			<li><a class="load-more" href="{{nextPath}}">More Events</a></li>
