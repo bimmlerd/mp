@@ -16,3 +16,4 @@
 ## Low priority
 - Notifications (and subsequently subscribtions?)
 - Private/Public events, groups
+- Make participants slide in, pushing stuff below down
