@@ -1,10 +1,12 @@
 <template name="spevsListEntry">
-	<li class="spev">
-		{{#if currentUser}}
-    	<a id="join-leave-btn-{{spevId}}" class="participate {{#if participating}} leave-spev {{else}} join-spev {{/if}}" role="button">+</a>
-		{{/if}}
-		<div class="spev-name">{{name}}</div>
-		<div class="spev-date">{{datestring}} - {{time}}</div>
-		<div class="spev-participants">{{> participantsList}}</div>
+	<li>
+		<div class="card">
+      <div class="card-content">
+        <span class="card-title blue-text"><h4>{{name}}</h4></span>
+        <div class="waves-effect waves-circle waves-dark light-blue btn-floating secondary-content"><i id="join-leave-btn-{{spevId}}" class="mdi-content-{{#if participating}}clear{{else}}add{{/if}}"></i></div>
+        <p class="flow-text">{{datestring}} - {{time}}</p>
+        <div class="spev-participants">{{> participantsList}}</div>         
+      </div>
+    </div>
 	</li>
 </template>

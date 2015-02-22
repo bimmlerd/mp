@@ -1,5 +1,5 @@
 Template.spevsListEntry.events({
-    "click .join-spev": function(e,t) {
+    "click .mdi-content-add": function(e,t) {
     e.preventDefault();
     var spev_id = t.data.spevId;
     Meteor.call("join-spev", spev_id);
@@ -7,9 +7,9 @@ Template.spevsListEntry.events({
     // toggle button-state
     document.getElementById("join-leave-btn-" + spev_id).className = 
         document.getElementById("join-leave-btn-" + spev_id).className.replace
-        ( /(?:^|\s)join-spev(?!\S)/g , ' leave-spev' );
+        ( /(?:^|\s)add(?!\S)/g , 'clear' );
     },
-    "click .leave-spev": function(e, t) {
+    "click .mdi-content-clear": function(e, t) {
     e.preventDefault();
     var spev_id = t.data.spevId;
     Meteor.call("leave-spev", spev_id);
@@ -17,7 +17,7 @@ Template.spevsListEntry.events({
     // toggle button-state
     document.getElementById("join-leave-btn-" + spev_id).className = 
         document.getElementById("join-leave-btn-" + spev_id).className.replace
-        ( /(?:^|\s)leave-spev(?!\S)/g , ' join-spev' );   
+        ( /(?:^|\s)clear(?!\S)/g , 'add' );   
     }
 });
 

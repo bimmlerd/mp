@@ -1,7 +1,9 @@
 <template name="participantsList">
+	{{#unless empty}}
 	<ul class="collection">
 	  {{#each participants}}
 	  {{> participant}}
 	  {{/each}}
 	</ul>
+	{{/unless}}
 </template>

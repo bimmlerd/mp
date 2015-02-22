@@ -25,6 +25,4 @@ Template.createSpev.events({
 
 		Router.go('spevsList');
 	}
-
-
 });

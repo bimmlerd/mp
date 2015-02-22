@@ -4,7 +4,7 @@
 	  		{{> spevsListEntry}}
 	  	{{/each}}
 		{{#if nextPath}}
-			<li><a class="load-more" href="{{nextPath}}">More Events</a></li>
+			<li><a class="waves-effect waves-light btn" href="{{nextPath}}">More Events</a></li>
 		{{else}}
 			{{#unless ready}}
 				{{> spinner}}
