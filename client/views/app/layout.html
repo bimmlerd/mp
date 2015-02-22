@@ -1,15 +1,25 @@
 <template name="layout">
   <body>
-    <div class="navbar">
-      <ul>
-        <li>{{> loginButtons align="right"}}</li>
-      </ul>
-    </div>
     <div class="container">
-      <header>
-        <a class="brand" href="{{pathFor 'spevsList'}}">Muscle UP</a>
-      </header>
-      {{> yield}}
+      <div class="row">
+        <nav class="blue darken-1">
+          <div class="col s12">
+            <a class="brand-logo" href="{{pathFor 'spevsList'}}">Muscle UP</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              {{#if currentUser}}
+                <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
+                {{#if currentUser.creator}}
+                  <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+                {{/if}}
+              {{/if}}
+              <li>{{> loginButtons align="right"}}</li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="row">
+        {{> yield}}
+      </div>
     </div>
   </body>
 </template>

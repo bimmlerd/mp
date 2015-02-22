@@ -1,12 +1,4 @@
 <template name="spevsList">
-	{{#if currentUser}}
-		<div class="buttons">
-			<a href="{{pathFor 'userEdit'}}">Edit User</a>
-			{{#if currentUser.creator}}
-			<a href="{{pathFor 'createSpev'}}">Create Event</a>
-			{{/if}}
-		</div>
-	{{/if}}
 	<ul>
 		{{#each spevsListEntries}}
 	  		{{> spevsListEntry}}
