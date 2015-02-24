@@ -26,3 +26,7 @@ Template.createSpev.events({
 		Router.go('spevsList');
 	}
 });
+
+Template.createSpev.rendered = function() {
+	$('.datepicker').pickadate();
+}

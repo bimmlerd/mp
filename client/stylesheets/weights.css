@@ -1,0 +1,62 @@
+span.weight {
+  min-width: 3rem;
+  padding: 0 6px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: inherit;
+  color: #757575;
+  float: right;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+span.weight.fivekg {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #0d47a1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin-right: 2px
+}
+
+span.weight.fivekg:after {
+  font-size: 0.8rem;
+  content: " 5kg"; 
+}
+
+span.weight.twokg {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #1976d2;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin-right: 2px
+}
+
+span.weight.twokg:after {
+  font-size: 0.8rem;
+  content: " 2kg"; 
+}
+
+span.weight.onekg {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #1e88e5;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin-right: 2px
+}
+
+span.weight.onekg:after {
+  font-size: 0.8rem;
+  content: " 1kg"; 
+}

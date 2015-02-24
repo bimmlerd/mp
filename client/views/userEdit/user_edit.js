@@ -1,42 +1,43 @@
 Template.userEdit.events({
-	'submit form': function(e) {
+	'click :submit': function(e) {
 		e.preventDefault();
-
+		var err = false;
 		var form = {
-			dpName: $(e.target).find('[name=displayName]').val(),
+			dpName: $(e.target).parents().find('[name=displayName]').val(),
 			weights: {
-				five: $(e.target).find('[name=five]').val(),
-				two: $(e.target).find('[name=two]').val(),
-				one: $(e.target).find('[name=one]').val()
+				five: $(e.target).parents().find('[name=five]').val(),
+				two: $(e.target).parents().find('[name=two]').val(),
+				one: $(e.target).parents().find('[name=one]').val()
 			}
 		}
+
+
+		if ($.trim(form.dpName) === "") {
+			err = true;
+			Router.go('spevsList');
+		}
+
 		// FIXME reimplement with check(weight, Number)
 		for (var key in form.weights) {
 			if (form.weights.hasOwnProperty(key)) {
 				if (isNaN(parseInt(form.weights[key])) ||
 					form.weights[key] === "") {
-					form.weights[key] = 0;
+					form.weights[key] = undefined;
+					err = true;
 					Router.go('spevsList');
 				}
 			}
 		}
-
-		Meteor.users.update({"_id": Meteor.userId()},
-			{$set: {weights: form.weights, displayName: form.dpName}},
-			function(error) {
-			if (error) {
-				throw new Meteor.Error("Error in updating User", error.reason);
-			} else {
-				Router.go('spevsList');
-			}
-		});
-	},
-	'click .delete': function(e) {
-		e.preventDefault();
-		if (confirm("Delete yourself?")) {
-			Meteor.call("leave-spev");
-			Meteor.users.remove(Meteor.userId()); 
-			Router.go('participantsList');
-	}
+		if (! err) {
+			Meteor.users.update({"_id": Meteor.userId()},
+				{$set: {weights: form.weights, displayName: form.dpName}},
+				function(error) {
+					if (error) {
+						throw new Meteor.Error("Error in updating User", error.reason);
+					} else {
+						Router.go('spevsList');
+					}
+				});
+		}
 	}
 });

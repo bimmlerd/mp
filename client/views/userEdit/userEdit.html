@@ -1,26 +1,30 @@
 <template name="userEdit">
-	<form class="userEdit-form">
-		<label for="displayName">My name is </label>
-		<input name="displayName" maxlength="30" type="text" value="{{currentUser.displayName}}" placeholder="Name"/>
-
-		<div class="weights-form">
-		<label>I need </label>
-		<input type="number" min="0" max="4" required name="five" value="{{currentUser.weights.five}}">
-		<label for="five">5er</label>
-		<input type="number" min="0" max="4" required name="two" value="{{currentUser.weights.two}}">
-		<label for="two">2er and</label>
-		<input type="number" min="0" max="4" required name="one" value="{{currentUser.weights.one}}">
-		<label for="one">1er</label>
-		</div>
-		<div class="submit-btn">
-		<input type="submit" value="Submit"/>
-		</div>
-
-		<!-- <hr/>
-		<div class="form-group">
-			<div class="controls">
-				<a class="btn btn-danger delete" href="#">Delete User</a>
+	<div class="row">
+		<form class="col s12">
+			<div class="row">
+		    <div class="input-field col s12">
+					<i class="mdi-action-account-circle prefix"></i>
+					<input name="displayName" type="text" class="validate" value="{{currentUser.displayName}}">
+		      <label for="displayName" class="active">Name</label>
+		    </div>
 			</div>
-		</div> -->
-	</form>
+			<div class="row">
+				<div class="input-field col s4">
+					<input type="number" min="0" max="4" required name="five" value="{{currentUser.weights.five}}">
+					<label for="five" class="active">5kg weights</label>
+				</div>
+				<div class="input-field col s4">
+					<input type="number" min="0" max="4" required name="two" value="{{currentUser.weights.two}}">
+					<label for="five" class="active">2kg weights</label>
+				</div>
+				<div class="input-field col s4">
+					<input type="number" min="0" max="4" required name="one" value="{{currentUser.weights.one}}">
+					<label for="five" class="active">1kg weights</label>
+				</div>
+			</div>
+			<div class="row">
+				<input class="btn waves-effect waves-light" type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
 </template>

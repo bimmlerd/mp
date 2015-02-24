@@ -1,11 +1,25 @@
 <template name="createSpev">
-	<form class="createSpev-form">
-		<label for="spevName">Name</label>
-		<input name="spevName" type="text" maxlength="40" value="Muscle Pump" placeholder="Name"/>
-		<input name="spevDate" type="date" class="datepicker" />
-		<input name="spevTime" type="time"/>
-		<div class="submit-btn">
-			<input type="submit" value="Submit"/>
-		</div>
-	</form>
+	<div class="row">
+		<form class="col s12">
+			<div class="row">
+			    <div class="input-field col s12 m6">
+					<input name="spevName" type="text" class="validate" value="Muscle Pump">
+					<label for="spevName" class="active">Event Name</label>
+			    </div>
+				<div class="input-field col s12 m6">
+				<input name="spevDate" type="date" class="datepicker" />
+				<label for="spevDate">Date</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+				<input name="spevTime" type="time"/>
+				<label for="spevTime" class="active">Time</label>
+				</div>
+			</div>
+			<div class="row">
+				<input class="btn waves-effect waves-light" type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
 </template>
