@@ -2,9 +2,8 @@ Meteor.publish('participants', function() {
 	return Participants.find();
 });
 
-Meteor.publish('spevs', function(sort, limit) {
-	// options used for pagination
-	return Spevs.find({}, {sort: sort, limit: limit});
+Meteor.publish('spevs', function(options) {
+	return Spevs.find({}, options);
 });
 
 // Meteor.users
