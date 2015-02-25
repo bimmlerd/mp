@@ -1,0 +1,69 @@
+/* WORKAROUND, this css code is somehow missing in the meteor package?*/
+
+ul.side-nav {
+  position: fixed;
+  width: 240px;
+  left: -105%;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: calc(100% + 60px);
+  padding-bottom: 60px;
+  background-color: #FFF;
+  z-index: 999;
+  will-change: left; }
+  ul.side-nav.right-aligned {
+    will-change: right;
+    right: -105%;
+    left: auto; }
+  ul.side-nav .collapsible {
+    margin: 0; }
+  ul.side-nav li {
+    float: none;
+    padding: 0 15px; }
+    ul.side-nav li:hover, ul.side-nav li.active {
+      background-color: #ddd; }
+  ul.side-nav a {
+    color: #444; }
+
+.drag-target {
+  height: 100%;
+  width: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 998; }
+
+ul.side-nav.fixed a {
+  display: block;
+  padding: 0 15px;
+  color: #444; }
+
+ul.side-nav.fixed {
+  left: 0;
+  position: fixed; }
+  ul.side-nav.fixed.right-aligned {
+    right: 0;
+    left: auto; }
+
+@media only screen and (max-width : 992px) {
+  ul.side-nav.fixed {
+    left: -105%; }
+    ul.side-nav.fixed.right-aligned {
+      right: -105%;
+      left: auto; }
+ }
+
+ul.side-nav .collapsible-body li.active, ul.side-nav.fixed .collapsible-body li.active {
+  background-color: #ee6e73; }
+  ul.side-nav .collapsible-body li.active a, ul.side-nav.fixed .collapsible-body li.active a {
+    color: #fff; }
+
+#sidenav-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  will-change: opacity; }

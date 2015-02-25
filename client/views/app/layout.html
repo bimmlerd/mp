@@ -1,23 +1,37 @@
 <template name="layout">
-  <body>  
-    <div class="row navbar-fixed">
-      <nav class="blue darken-1">
-        <div class="container">
-          <div class="col s12">
-            <a class="brand-logo" href="{{pathFor 'spevsList'}}">Muscle</a>
-            <ul id="nav-mobile" class="right">
-              {{#if currentUser}}
-                <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
-                {{#if currentUser.creator}}
-                  <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+  <body>
+    <div class="row">
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue darken-1">
+            <div class="col s12">
+              <a href="/" class="brand-logo">Muscle</a>
+              <a href="#" data-activates="mobile-side-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+              <ul class="right">
+                <li>{{> loginButtons align="right"}}</li>
+              </ul>
+              <ul class="right hide-on-med-and-down">
+                {{#if currentUser}}
+                  <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
+                  {{#if currentUser.creator}}
+                    <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+                  {{/if}}
                 {{/if}}
-              {{/if}}
-              <li>{{> loginButtons align="right"}}</li>
-            </ul>
+              </ul>
+               <ul class="side-nav" id="mobile-side-nav">
+                {{#if currentUser}}
+                  <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
+                  {{#if currentUser.creator}}
+                    <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+                  {{/if}}
+                {{/if}}
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
+
     <div class="container">
       <div class="row">
         {{> yield}}
