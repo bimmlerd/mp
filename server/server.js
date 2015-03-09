@@ -7,9 +7,9 @@ Accounts.onCreateUser(function(options, user) {
     user.displayName = options.username;
     user.weights = {
     	// some default values..
-        one: 2,
-        two: 4,
-        five: 0
+        one: "2",
+        two: "4",
+        five: "0"
     };
     return user;
 

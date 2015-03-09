@@ -1,4 +1,5 @@
 Template.layout.rendered = function() {
-	$(".button-collapse").sideNav();	
+	$(".button-collapse").sideNav({
+		closeOnClick: true // close sidenav on click
+	});
 }
-
