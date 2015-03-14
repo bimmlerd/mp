@@ -14,15 +14,11 @@ Template.createSpev.events({
 
 		var d = new Date(form.spevDate);
 
-
-		var spev_id = new Meteor.Collection.ObjectID()._str;
-		Spevs.insert({
+		var id = Spevs.insert({
 			"name": form.spevName,
 			"date": d.valueOf(),
-			"time": form.spevTime ,
-			"spevId": spev_id
+			"time": form.spevTime
 			});
-
 		Router.go('spevsList');
 	}
 });

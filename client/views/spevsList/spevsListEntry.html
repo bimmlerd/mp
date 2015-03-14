@@ -5,7 +5,7 @@
         <span class="card-title blue-text"><h4>{{name}}</h4></span>
         {{#if currentUser}}
           <div class="waves-effect waves-circle waves-dark light-blue btn-floating secondary-content">
-            <i id="join-leave-btn-{{spevId}}" class="mdi-content-{{#if participating}}clear{{else}}add{{/if}}"></i>
+            <i id="join-leave-btn-{{_id}}" class="mdi-content-{{#if participating}}clear{{else}}add{{/if}}"></i>
           </div>
         {{/if}}
         <p class="flow-text">{{datestring}} - {{time}}</p>

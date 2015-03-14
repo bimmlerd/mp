@@ -1,8 +1,8 @@
 Template.participant.helpers({
         displayName: function() {
-			return Meteor.users.findOne({_id: this.userId}).displayName;
+			return Meteor.users.findOne({_id: this.user_id}).displayName;
 		},
 		weights: function() {
-			return Meteor.users.findOne({_id: this.userId}).weights;
+			return Meteor.users.findOne({_id: this.user_id}).weights;
 		}
 });

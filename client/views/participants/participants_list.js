@@ -1,8 +1,8 @@
 Template.participantsList.helpers({
         participants: function() {
-			return Participants.find({spevId: this.spevId});
+			return Participants.find({spev_id: this._id});
     	},
     	empty: function() {
-    		return !Participants.find({spevId: this.spevId}).count();	
+			return !Participants.find({spev_id: this._id}).count();
     	}
 });
