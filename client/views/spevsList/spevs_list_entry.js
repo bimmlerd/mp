@@ -6,7 +6,7 @@ Template.spevsListEntry.events({
 
     "click .mdi-content-clear": function(e, t) {
     e.preventDefault();
-    Meteor.call("leave-spev", t.data._id;);
+    Meteor.call("leave-spev", t.data._id);
     }
 });
 
