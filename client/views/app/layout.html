@@ -11,6 +11,7 @@
                 <li>{{> loginButtons align="right"}}</li>
               </ul>
               <ul class="right hide-on-med-and-down">
+                <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
                 {{#if currentUser}}
                   <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
                   {{#if currentUser.creator}}
@@ -20,6 +21,7 @@
               </ul>
                <ul class="side-nav" id="mobile-side-nav">
                 <li><a href="/">Home</a></li>
+                <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
                 {{#if currentUser}}
                   <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
                   {{#if currentUser.creator}}

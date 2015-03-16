@@ -1,10 +1,8 @@
 Template.createSpev.events({
 	'submit form': function(e) {
+		// FIXME put all of this is a meteor.method
 		e.preventDefault();
-
-		// FIXME security in general
-		// FIXME especially anyone can create an event here,
-		// they just can't see the link to do so....
+		if (!Meteor.user().creator) {return;}
 
 		var form = {
 			spevName: $(e.target).find('[name=spevName]').val(),
@@ -18,7 +16,7 @@ Template.createSpev.events({
 			"name": form.spevName,
 			"date": d.valueOf(),
 			"time": form.spevTime
-			});
+		});
 		Router.go('spevsList');
 	}
 });
