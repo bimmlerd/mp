@@ -14,11 +14,6 @@ Meteor.publish(null, function() {
 										'creator': 1}});
 });
 
-// Meteor.publish('part_count_per_spev', function() {
-// 	var pipeline = [{$group: {_id: "$spev_id", participant_count: {$sum: 1}}}];
-// 	return Participants.aggregate(pipeline);
-// });
-
 Meteor.publish("part_count_per_spev", function () {
     var sub = this;
     var db = MongoInternals.defaultRemoteCollectionDriver().mongo.db;

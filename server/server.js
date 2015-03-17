@@ -16,32 +16,24 @@ Accounts.onCreateUser(function(options, user) {
 
 Meteor.users.allow({
 	update: function(user_id, doc, fields, modifier) {
-		// can only change your own documents
-		// TODO apparently doc only contains _id if it was changed, so
-		// that should also be blocked. unsure about this.
-		return doc._id === user_id;
-	},
-	remove: function(user_id, doc) {
+		// can only change your own user
 		return doc._id === user_id;
 	}
 });
 
 Meteor.users.deny({
 	update: function(user_id, doc, fields, modifier) {
-				// TODO apparently doc only contains _id if it was changed, so
-				// that should also be blocked.
-		var no =  _.contains(fields, 'username')  ||
-							_.contains(fields, 'emails')    ||
-							_.contains(fields, 'creator');
+		var no =  _.contains(fields, 'username') ||
+					_.contains(fields, 'emails') ||
+					_.contains(fields, 'creator');
 		return no;
 	}
 })
 
 Spevs.allow({
 		insert: function(user_id, doc) {
-			// XXX FIXME SPEVSREFACTOR actual security measures
-			// how about only registered ones
-			return true;
+			return Meteor.users.findOne({_id: user_id}) &&
+				Meteor.users.findOne({_id: user_id}).creator;
 		}
 })
 
@@ -53,7 +45,7 @@ Meteor.methods({
 	"join-spev": function(spev_id) {
 		// Make sure the user is logged in before inserting a participant
 		if (Participants.findOne({user_id: Meteor.userId(), spev_id: spev_id})) {
-				// already added.
+			// already added.
 			console.log("You already joined this event.")
 			return;
 		}
@@ -61,5 +53,33 @@ Meteor.methods({
 	},
 	"leave-spev": function(spev_id) {
 		Participants.remove({user_id: Meteor.userId(), spev_id: spev_id});
+	},
+	"edit-user": function(form) {
+		// valid weights "type" for check
+		ValidWeight = Match.Where(function (x) {
+			check(x, Number);
+			return x >= 0 && x <= 4;
+		});
+		try {
+			if (form.dpName.trim() === "") {
+				throw new Meteor.Error("Invalid Data", "Can't have an empty name.");
+			}
+
+			for (var key in form.weights) {
+				if (form.weights.hasOwnProperty(key)) {
+					check(parseInt(form.weights[key]), ValidWeight);
+				}
+			}
+
+			Meteor.users.update({"_id": Meteor.userId()},
+				{$set: {weights: form.weights, displayName: form.dpName}},
+				function(error) {
+					if (error)
+						throw new Meteor.Error("Error in updating User", error.reason);
+				}
+			);
+		} catch(e) {
+			return;
+		}
 	}
 });
