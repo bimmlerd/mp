@@ -12,7 +12,7 @@ Template.statsPage.helpers({
             spev.date = s.date; // add date
         })
         spevs = _.sortBy(spevs, "date");
-
+        spevs.pop() // remove last spev, which is probably currently joinable
         var spev_data = new Array(number_of_data_points);
         spevs.forEach(function(spev, i) {
             spev_data[i] = [spev.date, spev.participant_count]
