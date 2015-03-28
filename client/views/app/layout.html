@@ -1,40 +1,33 @@
 <template name="layout">
   <body>
-    <div class="row">
-      <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper blue darken-1">
-            <div class="col s12">
-              <a href="/" class="brand-logo">Muscle</a>
-              <a href="#" data-activates="mobile-side-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-              <ul class="right">
-                <li>{{> loginButtons align="right"}}</li>
-              </ul>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
-                {{#if currentUser}}
-                  <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
-                  {{#if currentUser.creator}}
-                    <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
-                  {{/if}}
-                {{/if}}
-              </ul>
-               <ul class="side-nav" id="mobile-side-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
-                {{#if currentUser}}
-                  <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
-                  {{#if currentUser.creator}}
-                    <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
-                  {{/if}}
-                {{/if}}
-              </ul>
-            </div>
-          </div>
-        </nav>
+    <nav class="blue darken-1">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Muscle</a>
+        <a href="#" data-activates="mobile-side-nav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul class="right">
+          <li>{{> loginButtons align="right"}}</li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
+            {{#if currentUser.creator}}
+              <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+            {{/if}}
+          {{/if}}
+        </ul>
+         <ul class="side-nav" id="mobile-side-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="{{pathFor 'statsPage'}}">Stats</a></li>
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'userEdit'}}">Edit User</a></li>
+            {{#if currentUser.creator}}
+              <li><a href="{{pathFor 'createSpev'}}">Create Event</a></li>
+            {{/if}}
+          {{/if}}
+        </ul>
       </div>
-    </div>
-
+    </nav>
     <div class="container">
       <div class="row">
         {{> yield}}

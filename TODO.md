@@ -10,7 +10,6 @@
 - Automatic event creation via some asvz api or some rule
 
 ## bleh.
-- FIX event creation, so that it's not only hidden from view, but not possible as a not-creator
 - Total weight we're pushing/I have to setup (per event)
 
 ## Low priority
