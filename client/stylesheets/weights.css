@@ -16,6 +16,12 @@ span.weight {
   margin-right: 2px
 }
 
+div.weight-container {
+  right: 0;
+  top: 0px;
+  position: absolute;
+}
+
 span.weight:after {
   font-size: 0.8rem;
 }

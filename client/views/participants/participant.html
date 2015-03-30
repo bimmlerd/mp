@@ -1,12 +1,11 @@
 <template name="participant">
   <li class="collection-item">
-    <h5><span class="flow-text">{{displayName}}</span>
-			<!-- <span class="onekg weight secondary-content">{{weights.one}}</span>
-			<span class="twokg weight secondary-content">{{weights.two}}</span>
-			<span class="fivekg weight secondary-content">{{weights.five}}</span> -->
-			<span class="onekg weight secondary-content">{{weights.one}}</span>
-			<span class="twokg weight secondary-content">{{weights.two}}</span>
-			<span class="fivekg weight secondary-content">{{weights.five}}</span>
+    <h5 style="position: relative"><span class="flow-text displayName">{{displayName}}</span>
+			<div class="weight-container">
+				<span class="onekg weight secondary-content">{{weights.one}}</span>
+				<span class="twokg weight secondary-content">{{weights.two}}</span>
+				<span class="fivekg weight secondary-content">{{weights.five}}</span>
+			</div>
 		</h5>
 	</li>
 </template>

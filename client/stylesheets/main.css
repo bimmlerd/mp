@@ -2,14 +2,10 @@ nav {
 	overflow: visible;
 }
 
-/*li.participant {
-	position: relative;
-}
-
 span.displayName {
-	position: absolute;
-	right: 30px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 80px;
+    display: block;
+}
