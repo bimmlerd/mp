@@ -18,7 +18,7 @@ span.weight {
 
 div.weight-container {
   right: 0;
-  top: 0px;
+  bottom: 5px;
   position: absolute;
 }
 
@@ -39,6 +39,13 @@ span.weight.onekg {
 }
 
 @media all and (min-width: 700px) {
+  div.weight-container {
+    right: 0;
+    top: 5px;
+    position: absolute;
+  }
+
+
   span.weight.onekg:after {
     content: " 1kg";
   }
