@@ -28,7 +28,8 @@ Template.statsPage.helpers({
                 enabled: false
             },
             title: {
-                text: "People participating"
+                //text: "People participating"
+                text: ""
             },
             xAxis: {
                 type: 'datetime',
