@@ -49,7 +49,7 @@ Meteor.methods({
 			console.log("You already joined this event.")
 			return;
 		}
-		Participants.insert({user_id: Meteor.userId(), spev_id: spev_id});
+		Participants.insert({user_id: Meteor.userId(), weights: Meteor.user().weights, spev_id: spev_id});
 	},
 	"leave-spev": function(spev_id) {
 		Participants.remove({user_id: Meteor.userId(), spev_id: spev_id});
