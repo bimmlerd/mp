@@ -1,18 +1,13 @@
 # TODO
 
-## High priority
 - Deleting/Editing Events
-- Prefill Create Event with next monday 8:00
-- User page, profile-like
-    + statistics
-    + maybe add profile pics?
-- Maybe event types, such as Superkondi vs Muscle Pump -> no weights im superkondi
-- Automatic event creation via some asvz api or some rule
+- stats should show all events in past
 
-## bleh.
-- Total weight we're pushing/I have to setup (per event)
+## API for Telegram Bot
 
-## Low priority
-- Notifications (and subsequently subscribtions?)
-- Private/Public events, groups
-- Make participants slide in, pushing stuff below down
+- restivius
+- set up SSL for authentication
+- API endpoints:
+    - /api/events (non authenticated)
+    - /api/join/:id (authenticated)
+

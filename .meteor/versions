@@ -10,6 +10,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+coffeescript@1.0.6
 ddp@1.1.0
 deps@1.0.7
 ejson@1.0.6
@@ -36,8 +37,8 @@ less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
-maazalik:highcharts@0.2.4
-materialize:materialize@0.96.1
+maazalik:highcharts@0.3.0
+materialize:materialize@0.97.0
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:aggregate@1.2.1
@@ -47,6 +48,7 @@ minimongo@1.0.8
 mobile-status-bar@1.0.3
 mongo@1.1.0
 mongo-livedata@1.0.8
+nimble:restivus@0.8.1
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
@@ -60,6 +62,7 @@ sacha:spin@2.3.1
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
+simple:json-routes@1.0.3
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3

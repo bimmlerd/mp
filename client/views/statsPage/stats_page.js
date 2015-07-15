@@ -18,6 +18,12 @@ Template.statsPage.helpers({
             spev_data[i] = [spev.date, spev.participant_count]
         })
 
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+
         return {
             chart: {
                 plotBackgroundColor: null,
@@ -28,7 +34,6 @@ Template.statsPage.helpers({
                 enabled: false
             },
             title: {
-                //text: "People participating"
                 text: ""
             },
             xAxis: {
