@@ -1,0 +1,12 @@
+<template name="integrationLogin">
+	{{#if has_telegram}}
+		<h4>You're good :)</h4>
+	{{else}}
+		{{#if currentUser}}
+			<p class="flow-text">This will link your Telegram ID to your Muscle account, so that you can use the MuscleBot for fun and profit.</p>
+			<div class="center"><button class="btn-large waves-effect waves-light" id="integration">Let's do it!</button></div>
+		{{else}}
+			<p class="flow-text">Please Sign in as usual</p>
+		{{/if}}
+	{{/if}}
+</template>

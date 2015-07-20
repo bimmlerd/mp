@@ -1,3 +1,18 @@
+// FIXME: API key for bot added to db by hand
+API_Users = new Mongo.Collection("api_users", {idGeneration: 'STRING'});
+
+// API_User = {
+//	"name": "MuscleBot",
+//	"key": "key123key",
+// }
+
+AccountLinkTokens = new Mongo.Collection("account_link_tokens", {idGeneration: 'STRING'});
+
+// AccountLinkToken = {
+//	"token": "lalalrandom",
+//	"telegram_id": 21312
+//}
+
 Accounts.onCreateUser(function(options, user) {
 	// TODO maybe add joined spevs to user record?
 	// We still want the default hook's 'profile' behavior.
@@ -81,5 +96,15 @@ Meteor.methods({
 		} catch(e) {
 			return;
 		}
+	},
+	"perform-integration": function(token) {
+		account_link = AccountLinkTokens.findOne({"token": token})
+		if (!Meteor.userId() || !account_link) {
+			return false;
+		}
+		id = account_link.telegram_id
+		Meteor.users.update({"_id": Meteor.userId()}, {$set: {"telegram_id": parseInt(id)}});
+		AccountLinkTokens.remove({"token": token});
+		return true;
 	}
 });

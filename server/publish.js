@@ -6,12 +6,14 @@ Meteor.publish('spevs', function(options) {
 	return Spevs.find({}, options);
 });
 
-// Meteor.users
+//Meteor.users
 Meteor.publish(null, function() {
-    return Meteor.users.find({},
-							{fields: {'weights': 1,
-										'displayName': 1,
-										'creator': 1}});
+    return Meteor.users.find({}, {fields: {'weights': 1, 'displayName': 1}});
+});
+// More fields for yourself
+Meteor.publish(null, function() {
+    return Meteor.users.find({"_id": this.userId},
+							{fields: {'creator': 1, 'telegram_id': 1}});
 });
 
 Meteor.publish("part_count_per_spev", function () {
